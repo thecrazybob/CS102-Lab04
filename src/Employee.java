@@ -13,7 +13,11 @@ public class Employee extends Person {
     // constructor
     public Employee(int employeeNo, String name) {
         super(name);
+
         this.employeeNo = employeeNo;
+        this.available = true;
+        this.currentJobs = 0;
+
         deliveries = new Delivery[5];
     }
 
@@ -32,7 +36,15 @@ public class Employee extends Person {
      * @return boolean
      */
     public boolean getAvailability() {
-        return available;
+
+        if (this.currentJobs < this.MAX_JOBS) {
+            this.available = true;
+        } else {
+            this.available = false;
+        }
+
+        return this.available;
+
     }
 
     /**
@@ -47,13 +59,13 @@ public class Employee extends Person {
 
         if (this.currentJobs < MAX_JOBS) {
 
-            this.currentJobs += 1;
-
             if (sendItem.getWeight() > 0.1) {
                 deliveries[currentJobs] = new Package(sendItem, sender, receiver, packageNo);
             } else {
                 deliveries[currentJobs] = new Mail(sendItem.getContent(), sender, receiver, packageNo);
             }
+
+            this.currentJobs += 1;
 
         }
     }
