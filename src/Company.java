@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Company implements Locatable {
 
@@ -135,11 +136,26 @@ public class Company implements Locatable {
      */
     public boolean createDeliverable(Item sendItem, Customer sender, Customer receiver) {
 
-        // todo
-        for (int i = 0; i < this.employees.length; i++) {
-            this.employees[i].getAvailability();
+        boolean employeeFound;
+        this.packageNo = 100000 + (new Random()).nextInt(900000);
 
+        employeeFound = false;
+
+        for (int i = 0; i < this.employees.length && !employeeFound; i++) {
+            employeeFound = this.employees[i].getAvailability();
+
+            if (employeeFound) {
+                this.employeeNo = i;
+            }
         }
+
+        if (employeeFound) {
+            employees[this.employeeNo].addJob(sendItem, sender, receiver, this.packageNo);
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     /**
@@ -150,7 +166,11 @@ public class Company implements Locatable {
      * @return
      */
     public void deliverPackages() {
-        // todo
+        for (int i = 0; i < this.employees.length; i++) {
+            if (this.employees[i].currentJobs > 0) {
+                this.employees[i].deliverPackages();
+            }
+        }
     }
 
     /**
@@ -162,6 +182,7 @@ public class Company implements Locatable {
      */
     public String toString() {
         // todo
+        return "";
     }
 
 }
