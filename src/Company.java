@@ -20,6 +20,8 @@ public class Company implements Locatable {
         this.posY = y;
 
         this.numOfEmployees = 0;
+        this.employees = new Employee[0];
+        this.customers = new ArrayList<Customer>();
     }
 
     /**

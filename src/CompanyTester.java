@@ -37,17 +37,17 @@ public class CompanyTester {
         amazon.addCustomer(customer1);
         amazon.addCustomer(customer2);
 
-        customer1.sendItem(amazon, item1, customer2);
-        customer1.sendItem(amazon, item1, customer2);
-        customer1.sendItem(amazon, item2, customer2);
-        customer1.sendItem(amazon, item2, customer2);
-        customer1.sendItem(amazon, item3, customer2);
-        customer1.sendItem(amazon, item3, customer2);
-        customer1.sendItem(amazon, item4, customer2);
-        customer1.sendItem(amazon, item4, customer2);
-        customer1.sendItem(amazon, item1, customer2);
-        customer1.sendItem(amazon, item1, customer2);
-        customer1.sendItem(amazon, item1, customer2);
+        System.out.println(customer1.sendItem(amazon, item1, customer2));
+        System.out.println(customer1.sendItem(amazon, item1, customer2));
+        System.out.println(customer1.sendItem(amazon, item2, customer2));
+        System.out.println(customer1.sendItem(amazon, item2, customer2));
+        System.out.println(customer1.sendItem(amazon, item3, customer2));
+        System.out.println(customer1.sendItem(amazon, item3, customer2));
+        System.out.println(customer1.sendItem(amazon, item4, customer2));
+        System.out.println(customer1.sendItem(amazon, item4, customer2));
+        System.out.println(customer1.sendItem(amazon, item1, customer2));
+        System.out.println(customer1.sendItem(amazon, item1, customer2));
+        System.out.println(customer1.sendItem(amazon, item1, customer2));
 
         // 4. Get an employee busy by giving it the maximum amount of jobs
 
