@@ -52,7 +52,7 @@ public class Customer extends Person {
      * @return String
      */
     public String toString() {
-        return "currentItem: " + this.currentItem;
+        return "Customer: " + super.getName() + " currentItem: " + this.getCurrentItem();
     }
 
 }
