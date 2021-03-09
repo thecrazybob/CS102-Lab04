@@ -13,6 +13,7 @@ public class Employee extends Person {
     // constructor
     public Employee(int employeeNo, String name) {
         super(name);
+        this.employeeNo = employeeNo;
         deliveries = new Delivery[5];
     }
 
