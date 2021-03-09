@@ -1,5 +1,5 @@
 abstract class Delivery {
-    
+
     // properties
     int packageNo;
     Customer sender;
@@ -12,24 +12,27 @@ abstract class Delivery {
         this.packageNo = packageNo;
     }
 
-    /** 
+    /**
      * Returns the package no of the Delivery
+     * 
      * @return int
      */
     public int getPackageNo() {
         return packageNo;
     }
-    
-    /** 
+
+    /**
      * Returns the sender of the Delivery
+     * 
      * @return Customer
      */
     public Customer getSender() {
         return sender;
     }
-    
-    /** 
+
+    /**
      * Returns the receiver of the Delivery
+     * 
      * @return Customer
      */
     public Customer getReceiver() {
@@ -38,6 +41,7 @@ abstract class Delivery {
 
     /**
      * Abstract method for returning the weight
+     * 
      * @return
      */
     abstract double getWeight();

@@ -11,27 +11,28 @@ public class Item {
     }
 
     // methods
-    
-    /** 
+
+    /**
      * Returns the weight of the Item
+     * 
      * @return double
      */
     public double getWeight() {
         return this.weight;
     }
-    
-    
-    /** 
+
+    /**
      * Returns the content of the Item
+     * 
      * @return String
      */
     public String getContent() {
         return this.content;
     }
 
-    
-    /** 
+    /**
      * Returns the string representation of the Item
+     * 
      * @return String
      */
     public String toString() {

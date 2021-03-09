@@ -21,26 +21,27 @@ public class Company implements Locatable {
         this.numOfEmployees = 0;
     }
 
-    /** 
+    /**
      * Returns the X position of the Company
+     * 
      * @return int
      */
     public int getX() {
         return this.posX;
     }
 
-    
-    /** 
+    /**
      * Returns the Y position of the Company
+     * 
      * @return int
      */
     public int getY() {
         return this.posY;
     }
 
-    
-    /** 
+    /**
      * Sets the X and Y pos for the Company
+     * 
      * @param x
      * @param y
      */
@@ -50,7 +51,9 @@ public class Company implements Locatable {
     }
 
     /**
-     * Adds an employee to the company and returns true if the employee is successfully added
+     * Adds an employee to the company and returns true if the employee is
+     * successfully added
+     * 
      * @param candidate
      * @return
      */
@@ -84,6 +87,7 @@ public class Company implements Locatable {
 
     /**
      * Adds the given customer to the Company
+     * 
      * @param candidate
      * @return
      */
@@ -92,7 +96,9 @@ public class Company implements Locatable {
     }
 
     /**
-     * Removes an employee from the Company and returns true if the employee at the given index is deleted
+     * Removes an employee from the Company and returns true if the employee at the
+     * given index is deleted
+     * 
      * @param candidate
      * @return
      */
@@ -104,8 +110,7 @@ public class Company implements Locatable {
 
             if (i != employeeIndex || !employeeTerminated) {
                 newEmployeesArray[i] = this.employees[i];
-            }
-            else {
+            } else {
                 i -= 1;
                 employeeTerminated = true;
             }
@@ -113,22 +118,23 @@ public class Company implements Locatable {
         }
 
         this.employees = newEmployeesArray;
-        
+
         if (employeeTerminated) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
     /**
-     * Creates a deliverable object from the item if an employee is available and returns true, otherwise it returns false
+     * Creates a deliverable object from the item if an employee is available and
+     * returns true, otherwise it returns false
+     * 
      * @param candidate
      * @return
      */
     public boolean createDeliverable(Item sendItem, Customer sender, Customer receiver) {
-        
+
         // todo
         for (int i = 0; i < this.employees.length; i++) {
             this.employees[i].getAvailability();
@@ -137,7 +143,9 @@ public class Company implements Locatable {
     }
 
     /**
-     * Deliver all the packages via Employees and print the delivery information. Displays type, no, sender and receiver info (name and loc) for each delivery.
+     * Deliver all the packages via Employees and print the delivery information.
+     * Displays type, no, sender and receiver info (name and loc) for each delivery.
+     * 
      * @param candidate
      * @return
      */
@@ -146,7 +154,9 @@ public class Company implements Locatable {
     }
 
     /**
-     * Lists and prints all the information related to the Company. Includes deliveries, employees, and customers.
+     * Lists and prints all the information related to the Company. Includes
+     * deliveries, employees, and customers.
+     * 
      * @param candidate
      * @return
      */
