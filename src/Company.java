@@ -2,7 +2,9 @@ import java.util.ArrayList;
 
 public class Company implements Locatable {
 
+    // properties
     final int EMPLOYEE_CAPACITY = 15;
+
     Employee[] employees;
     ArrayList<Customer> customers;
     int numOfEmployees;
@@ -11,6 +13,7 @@ public class Company implements Locatable {
     int posX;
     int posY;
 
+    // constructor
     Company(int x, int y) {
         this.posX = x;
         this.posY = y;
@@ -19,6 +22,7 @@ public class Company implements Locatable {
     }
 
     /** 
+     * Returns the X position of the Company
      * @return int
      */
     public int getX() {
@@ -27,6 +31,7 @@ public class Company implements Locatable {
 
     
     /** 
+     * Returns the Y position of the Company
      * @return int
      */
     public int getY() {
@@ -35,6 +40,7 @@ public class Company implements Locatable {
 
     
     /** 
+     * Sets the X and Y pos for the Company
      * @param x
      * @param y
      */
@@ -44,7 +50,7 @@ public class Company implements Locatable {
     }
 
     /**
-     * returns true if the employee is successfully added
+     * Adds an employee to the company and returns true if the employee is successfully added
      * @param candidate
      * @return
      */
@@ -77,7 +83,7 @@ public class Company implements Locatable {
     }
 
     /**
-     * adds the given customer
+     * Adds the given customer to the Company
      * @param candidate
      * @return
      */
@@ -86,7 +92,7 @@ public class Company implements Locatable {
     }
 
     /**
-     * returns true if the employee at the given index is deleted
+     * Removes an employee from the Company and returns true if the employee at the given index is deleted
      * @param candidate
      * @return
      */
@@ -117,7 +123,7 @@ public class Company implements Locatable {
     }
 
     /**
-     * this method creates a deliverable object from the item if an employee is available and returns true, otherwise it returns false
+     * Creates a deliverable object from the item if an employee is available and returns true, otherwise it returns false
      * @param candidate
      * @return
      */
@@ -140,7 +146,7 @@ public class Company implements Locatable {
     }
 
     /**
-     * List and print all the information related to the Company. Includes deliveries, employees, and customers.
+     * Lists and prints all the information related to the Company. Includes deliveries, employees, and customers.
      * @param candidate
      * @return
      */
