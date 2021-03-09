@@ -50,6 +50,8 @@ public class CompanyTester {
         System.out.println(customer1.sendItem(amazon, item1, customer2));
 
         // 4. Get an employee busy by giving it the maximum amount of jobs
+        System.out.println("Employee1 getAvailability(): " + employee1.getAvailability());
+        System.out.println("Employee2 getAvailability(): " + employee2.getAvailability());
 
         // 5. Deliver items between customers.
         amazon.deliverPackages();
