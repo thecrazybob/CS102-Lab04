@@ -111,10 +111,9 @@ public class Company implements Locatable {
 
         for (int i = 0; i < this.employees.length; i++) {
 
-            if (i != employeeIndex || !employeeTerminated) {
+            if (i != employeeIndex || employeeTerminated) {
                 newEmployeesArray[i] = this.employees[i];
             } else {
-                i -= 1;
                 employeeTerminated = true;
             }
 
@@ -122,10 +121,7 @@ public class Company implements Locatable {
 
         this.employees = newEmployeesArray;
 
-        if (employeeTerminated) {
-            return true;
-        } else {
-            return false;
+        return employeeTerminated;
         }
     }
 
