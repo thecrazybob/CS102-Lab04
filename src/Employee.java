@@ -90,9 +90,10 @@ public class Employee extends Person {
      * @return String
      */
     public String toString() {
+
         return "[" + getClass().getSimpleName() + "]" + "name: " + super.getName() + " currentJobs: " + this.currentJobs
-                + " deliveries: " + this.deliveries + " salary: " + this.salary + " employeeNo: " + this.employeeNo
-                + " available: " + this.available;
+                + " salary: " + this.salary + " employeeNo: " + this.employeeNo + " available: " + this.available;
+
     }
 
 }
