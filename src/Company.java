@@ -95,7 +95,7 @@ public class Company implements Locatable {
      * @return
      */
     public void addCustomer(Customer customer) {
-        customers.add(customer);
+        this.customers.add(customer);
     }
 
     /**
@@ -111,22 +111,24 @@ public class Company implements Locatable {
 
         for (int i = 0; i < this.employees.length; i++) {
 
-            if (i != employeeIndex || !employeeTerminated) {
-                newEmployeesArray[i] = this.employees[i];
+            if (i != employeeIndex || employeeTerminated) {
+
+                int newArrayIndex = employeeTerminated ? i - 1 : i;
+
+                newEmployeesArray[newArrayIndex] = this.employees[i];
+
             } else {
-                i -= 1;
+
                 employeeTerminated = true;
+
             }
 
         }
 
         this.employees = newEmployeesArray;
 
-        if (employeeTerminated) {
-            return true;
-        } else {
-            return false;
-        }
+        return employeeTerminated;
+
     }
 
     /**
@@ -151,12 +153,10 @@ public class Company implements Locatable {
             }
         }
 
-        if (employeeFound) {
+        if (employeeFound)
             employees[this.employeeNo].addJob(sendItem, sender, receiver, this.packageNo);
-            return true;
-        } else {
-            return false;
-        }
+
+        return employeeFound;
 
     }
 
@@ -183,8 +183,27 @@ public class Company implements Locatable {
      * @return
      */
     public String toString() {
-        // todo
-        return "";
+
+        String response;
+
+        String employees = "";
+        String customers = "";
+        String deliveries = "";
+
+        for (int i = 0; i < this.employees.length; i++) {
+            employees += this.employees[i];
+            for (int deliveryI = 0; deliveryI < this.employees[i].deliveries.length; deliveryI++) {
+                deliveries += this.employees[i].deliveries[deliveryI];
+            }
+        }
+
+        for (int i = 0; i < this.customers.size(); i++) {
+            customers += this.customers.get(i).toString();
+        }
+
+        response = "[" + getClass().getSimpleName() + "]" + employees + customers + deliveries;
+
+        return response;
     }
 
 }

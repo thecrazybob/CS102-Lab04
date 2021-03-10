@@ -26,8 +26,8 @@ public class Package extends Delivery {
      * @return String
      */
     public String toString() {
-        return "packedItem: " + packedItem + " sender: " + super.getSender() + " receiver: " + this.getReceiver()
-                + " packageNo: " + this.getPackageNo();
+        return "[" + getClass().getSimpleName() + "]" + "packedItem: " + packedItem + " sender: " + super.getSender()
+                + " receiver: " + this.getReceiver() + " packageNo: " + this.getPackageNo();
     }
 
 }

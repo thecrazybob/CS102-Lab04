@@ -26,8 +26,8 @@ public class Mail extends Delivery {
      * @return String
      */
     public String toString() {
-        return "Package No: " + super.getPackageNo() + " Sender: " + super.getSender() + " Receiver: "
-                + super.getReceiver() + " Content: " + this.content;
+        return "[" + getClass().getSimpleName() + "]" + "Package No: " + super.getPackageNo() + " Sender: "
+                + super.getSender() + " Receiver: " + super.getReceiver() + " Content: " + this.content;
     }
 
 }

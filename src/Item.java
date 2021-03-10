@@ -36,7 +36,7 @@ public class Item {
      * @return String
      */
     public String toString() {
-        return "Weight: " + this.weight + " " + "Content: " + this.content;
+        return "[" + getClass().getSimpleName() + "]" + "weight: " + this.weight + " " + "content: " + this.content;
     }
 
 }

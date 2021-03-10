@@ -8,10 +8,14 @@ public class CompanyTester {
         Item item3 = new Item(0.2, "A small package");
         Item item4 = new Item(1, "A mobile phone");
 
+        System.out.println();
+
         System.out.println(item1);
         System.out.println(item2);
         System.out.println(item3);
         System.out.println(item4);
+
+        System.out.println();
 
         // 2. Create at least 2 Customers and 2 Employees.
         Customer customer1 = new Customer("Jeff Bezos");
@@ -23,8 +27,12 @@ public class CompanyTester {
         System.out.println(customer1);
         System.out.println(customer2);
 
+        System.out.println();
+
         System.out.println(employee1);
         System.out.println(employee2);
+
+        System.out.println();
 
         // 3. Customers send items to each other. Have a case where the Customer
         // couldn’t send the item, because there was no available Employee.
@@ -33,6 +41,10 @@ public class CompanyTester {
 
         amazon.addEmployee(employee1);
         amazon.addEmployee(employee2);
+
+        amazon.terminateContract(0);
+
+        System.out.println(amazon);
 
         amazon.addCustomer(customer1);
         amazon.addCustomer(customer2);

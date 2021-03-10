@@ -18,7 +18,7 @@ public class Employee extends Person {
         this.available = true;
         this.currentJobs = 0;
 
-        deliveries = new Delivery[5];
+        deliveries = new Delivery[MAX_JOBS];
     }
 
     // methods
@@ -90,8 +90,9 @@ public class Employee extends Person {
      * @return String
      */
     public String toString() {
-        return "name: " + super.getName() + " currentJobs: " + this.currentJobs + " deliveries: " + this.deliveries
-                + " salary: " + this.salary + " employeeNo: " + this.employeeNo + " available: " + this.available;
+        return "[" + getClass().getSimpleName() + "]" + "name: " + super.getName() + " currentJobs: " + this.currentJobs
+                + " deliveries: " + this.deliveries + " salary: " + this.salary + " employeeNo: " + this.employeeNo
+                + " available: " + this.available;
     }
 
 }
